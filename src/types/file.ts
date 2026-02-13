@@ -1,3 +1,5 @@
+export type FileType = string;
+
 export interface FilesType extends File {
   file_name: string; // Required
   file_size: number; // Required
