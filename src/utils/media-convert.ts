@@ -66,7 +66,9 @@ export default async function convert(
 	await ffmpeg.exec(ffmpegCmd);
 
 	const data = await ffmpeg.readFile(output);
-	const blob = new Blob([data.buffer], { type: file_type.split("/")[0] });
+	const isBinary = typeof data !== "string";
+	const blobData = isBinary ? new Uint8Array(data.buffer as ArrayBuffer) : data;
+	const blob = new Blob([blobData as BlobPart], { type: file_type.split("/")[0] });
 	const url = URL.createObjectURL(blob);
 
 	return { url, output };
