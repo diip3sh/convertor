@@ -80,10 +80,10 @@ export const NavBottomBar = () => {
         href="https://github.com/pilladipesh33/converter-site"
         target="_blank"
         rel="noopener noreferrer"
-        className="relative flex items-center gap-2 px-3 py-1.5 h-full font-medium font-geist-sans text-white hover:text-neutral-200 transition-colors duration-200 whitespace-nowrap"
+        className="relative flex items-center gap-2 px-3 py-1.5 h-full font-medium font-sans text-white hover:text-neutral-200 transition-colors duration-200 whitespace-nowrap"
       >
         <GitHub height={16} width={16} className="flex-shrink-0" />
-        <span ref={textRef} className="text-base font-geist-sans pr-2">
+        <span ref={textRef} className="text-base font-sans pr-2">
           Star on GitHub
         </span>
       </Link>

@@ -3,94 +3,110 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 220 10% 8%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 10% 8%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 8%;
-    --primary: 220 10% 8%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 6% 96%;
-    --secondary-foreground: 220 10% 8%;
-    --muted: 220 6% 96%;
-    --muted-foreground: 220 4% 44%;
-    --accent: 220 6% 96%;
-    --accent-foreground: 220 10% 8%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 6% 90%;
-    --input: 220 6% 90%;
-    --ring: 220 10% 8%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --radius: 1rem;
-  }
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 220 10% 8%;
+        --card: 0 0% 100%;
+        --card-foreground: 220 10% 8%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 10% 8%;
+        --primary: 220 10% 8%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 220 6% 96%;
+        --secondary-foreground: 220 10% 8%;
+        --muted: 220 6% 96%;
+        --muted-foreground: 220 4% 44%;
+        --accent: 220 6% 96%;
+        --accent-foreground: 220 10% 8%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 220 6% 90%;
+        --input: 220 6% 90%;
+        --ring: 220 10% 8%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+        --radius: 1rem;
+    }
 
-  .dark {
-    --background: 220 10% 4%;
-    --foreground: 220 10% 95%;
-    --card: 220 10% 8%;
-    --card-foreground: 220 10% 95%;
-    --popover: 220 10% 8%;
-    --popover-foreground: 220 10% 95%;
-    --primary: 220 10% 95%;
-    --primary-foreground: 220 10% 8%;
-    --secondary: 220 10% 14%;
-    --secondary-foreground: 220 10% 95%;
-    --muted: 220 10% 14%;
-    --muted-foreground: 220 4% 60%;
-    --accent: 220 10% 14%;
-    --accent-foreground: 220 10% 95%;
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 10% 18%;
-    --input: 220 10% 18%;
-    --ring: 220 10% 60%;
-    --chart-1: 220 70% 60%;
-    --chart-2: 160 60% 55%;
-    --chart-3: 30 80% 65%;
-    --chart-4: 280 65% 70%;
-    --chart-5: 340 75% 65%;
-  }
+    .dark {
+        --background: 220 10% 4%;
+        --foreground: 220 10% 95%;
+        --card: 220 10% 8%;
+        --card-foreground: 220 10% 95%;
+        --popover: 220 10% 8%;
+        --popover-foreground: 220 10% 95%;
+        --primary: 220 10% 95%;
+        --primary-foreground: 220 10% 8%;
+        --secondary: 220 10% 14%;
+        --secondary-foreground: 220 10% 95%;
+        --muted: 220 10% 14%;
+        --muted-foreground: 220 4% 60%;
+        --accent: 220 10% 14%;
+        --accent-foreground: 220 10% 95%;
+        --destructive: 0 62% 50%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 220 10% 18%;
+        --input: 220 10% 18%;
+        --ring: 220 10% 60%;
+        --chart-1: 220 70% 60%;
+        --chart-2: 160 60% 55%;
+        --chart-3: 30 80% 65%;
+        --chart-4: 280 65% 70%;
+        --chart-5: 340 75% 65%;
+    }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+    * {
+        @apply border-border;
+    }
 
-  body {
-    @apply bg-background text-foreground;
-    background-image: 
-      radial-gradient(circle at 20% 30%, oklch(0.95 0.02 240) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, oklch(0.95 0.02 280) 0%, transparent 50%);
-  }
+    body {
+        @apply bg-background text-foreground font-sans;
+        background-image:
+            radial-gradient(
+                circle at 20% 30%,
+                oklch(0.95 0.02 240) 0%,
+                transparent 50%
+            ),
+            radial-gradient(
+                circle at 80% 70%,
+                oklch(0.95 0.02 280) 0%,
+                transparent 50%
+            );
+    }
 
-  .dark body {
-    background-image: 
-      radial-gradient(circle at 20% 30%, oklch(0.15 0.02 240) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, oklch(0.15 0.02 280) 0%, transparent 50%);
-  }
+    .dark body {
+        background-image:
+            radial-gradient(
+                circle at 20% 30%,
+                oklch(0.15 0.02 240) 0%,
+                transparent 50%
+            ),
+            radial-gradient(
+                circle at 80% 70%,
+                oklch(0.15 0.02 280) 0%,
+                transparent 50%
+            );
+    }
 }
 
 @layer utilities {
-  .animate-in {
-    animation: animate-in 0.3s ease-out;
-  }
+    .animate-in {
+        animation: animate-in 0.3s ease-out;
+    }
 }
 
 @keyframes animate-in {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
