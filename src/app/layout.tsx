@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { NavBottomBar } from "@/components/nav-bottomBar";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { GeistPixelGrid } from "geist/font/pixel";
@@ -22,7 +21,6 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelGrid.variable} antialiased`}
       >
         <div className="min-h-screen font-sans">{children}</div>
-        <NavBottomBar />
       </body>
     </html>
   );
