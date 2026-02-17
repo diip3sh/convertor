@@ -1,8 +1,15 @@
 import { FileType } from "../types/file";
-export const isValidFileType = (file: File): FileType => {
+
+export const isValidFileType = (file: File): FileType | "invalid" => {
 	if (file.type.startsWith("image/")) return file.type as FileType;
 	if (file.type.startsWith("video/")) return file.type as FileType;
+	if (file.type.startsWith("audio/")) return file.type as FileType;
 	return "invalid" as FileType;
+};
+
+export const isValidFile = (file: File): boolean => {
+	const result = isValidFileType(file);
+	return result !== "invalid";
 };
 
 export const formatFileSize = (bytes: number): string => {

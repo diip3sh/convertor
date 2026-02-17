@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { NavBottomBar } from "@/components/nav-bottomBar";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import {
-  GeistPixelGrid,
-} from "geist/font/pixel";
+import { GeistPixelGrid } from "geist/font/pixel";
 
 export const metadata: Metadata = {
   title: "Convertor",
-  description: "Transform media between formats instantly. Support for audio, video, and images.",
+  description:
+    "Transform media between formats instantly. Support for audio, video, and images.",
 };
 
 export default function RootLayout({
@@ -22,10 +20,7 @@ export default function RootLayout({
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelGrid.variable} antialiased`}
       >
-        <div className="min-h-screen">
-          {children}
-        </div>
-        <NavBottomBar />
+        <div className="min-h-screen font-sans">{children}</div>
       </body>
     </html>
   );

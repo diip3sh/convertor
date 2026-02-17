@@ -73,17 +73,17 @@ export const NavBottomBar = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-[#333] fixed right-3 bottom-3 border border-neutral-200 rounded-full shadow-md overflow-hidden"
+      className="bg-[#333] border border-border rounded-full shadow-md overflow-hidden"
       style={{ width: "41px", height: "40px" }}
     >
       <Link
         href="https://github.com/pilladipesh33/converter-site"
         target="_blank"
         rel="noopener noreferrer"
-        className="relative flex items-center gap-2 px-3 py-1.5 h-full font-medium font-geist-sans text-white hover:text-neutral-200 transition-colors duration-200 whitespace-nowrap"
+        className="relative flex items-center gap-2 px-3 py-1.5 h-full font-medium font-sans text-white hover:text-neutral-200 active:scale-[0.98] transition-all duration-200 whitespace-nowrap"
       >
         <GitHub height={16} width={16} className="flex-shrink-0" />
-        <span ref={textRef} className="text-base font-geist-sans pr-2">
+        <span ref={textRef} className="text-base font-sans pr-2">
           Star on GitHub
         </span>
       </Link>
