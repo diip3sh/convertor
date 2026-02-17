@@ -106,6 +106,7 @@ export const FileRow = ({
           value={action.to}
           onChange={onFormatChange}
           disabled={isConverting || action.is_converted}
+          currentFormat={action.from}
         />
       </div>
 

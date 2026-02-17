@@ -1,51 +1,55 @@
 "use client";
 
-import { EXTENSIONS } from "@/utils/constant";
-
 interface FormatSelectorProps {
   fileType: string;
   value: string | null;
   onChange: (format: string) => void;
   disabled?: boolean;
+  currentFormat?: string;
 }
 
-export const FormatSelector = ({ fileType, value, onChange, disabled }: FormatSelectorProps) => {
+export const FormatSelector = ({ fileType, value, onChange, disabled, currentFormat }: FormatSelectorProps) => {
   const getFormats = () => {
     if (fileType === "image") {
-      return [
+      const formats = [
         { value: "webp", label: "WEBP (Lossless)" },
         { value: "png", label: "PNG" },
         { value: "jpg", label: "JPG" },
         { value: "avif", label: "AVIF" },
       ];
+      return formats.filter(f => f.value !== currentFormat?.toLowerCase());
     }
     if (fileType === "video") {
-      return [
+      const formats = [
         { value: "gif", label: "GIF (Animated)" },
         { value: "webm", label: "WEBM" },
         { value: "mp4", label: "MP4" },
         { value: "mov", label: "MOV" },
       ];
+      return formats.filter(f => f.value !== currentFormat?.toLowerCase());
     }
     if (fileType === "audio") {
-      return [
+      const formats = [
         { value: "mp3", label: "MP3" },
         { value: "wav", label: "WAV" },
         { value: "ogg", label: "OGG" },
         { value: "flac", label: "FLAC" },
       ];
+      return formats.filter(f => f.value !== currentFormat?.toLowerCase());
     }
     return [];
   };
 
   const formats = getFormats();
+  const selectId = `format-select-${fileType}`;
 
   return (
     <div className="w-full">
-      <label className="block text-[0.65rem] uppercase font-semibold tracking-wider mb-2 text-[var(--text-color)]">
+      <label htmlFor={selectId} className="block text-[0.65rem] uppercase font-semibold tracking-wider mb-2 text-[var(--text-color)]">
         Convert to
       </label>
       <select
+        id={selectId}
         value={value || ""}
         onChange={(e) => onChange(e.target.value)}
         disabled={disabled}
